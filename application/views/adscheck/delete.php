@@ -1,0 +1,86 @@
+<div class="main-panel">
+   <div class="content">
+      <div class="page-inner">
+         <div class="row">
+            <div class="col-sm-12 col-md-12">
+               <div class="card card-stats card-round">
+                  <div class="card-body">
+                     <div class="row align-items-center">
+                          <!-- <div class="col-icon">
+                           <div class="icon-big text-center icon-info bubble-shadow-small">
+                              Are you sure you want to delte this ad ?
+                           </div>
+                        </div>
+                        <div class="col col-stats ml-3 ml-sm-0">
+                           <div class="numbers">
+                              <p class="card-category"></p>
+                              <h4 class="card-title"></h4>
+                           </div>
+                        </div>-->
+                        <div>  
+                        </div>
+                        <div class="container">
+                        Are you sure you want to delte this ad ?
+                          <?php echo validation_errors('<div class="notification is-danger">', '</div>'); ?>
+    
+    <form action="<?= base_url('Adscheck/delete/'.$adsedit->id) ?>" name="theForm" method="POST">
+        <div class="field">
+            <label class="label">Ads Type</label>
+            <div class="control">
+                <input id="type" name="type" class="input" type="text" value="<?= $adsedit->type ?>" placeholder="Add Add Type" readonly=1>
+                <input id="delete" name="delete" class="input" type="hidden" value="true">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Ads Content</label>
+            <div class="control">
+                <textarea id="ad_content" rows="4" cols="50" name="ad_content" class="input" type="text" placeholder="Add Ads Script" readonly=1><?php echo $adsedit->ad_content ?> </textarea>
+            </div>
+        </div>
+       
+       
+        <div class="col col-stats ml-3 ml-sm-0">
+                <button type="button" class=" btn btn-primary" style="margin-left: -17px !important" onClick="addeleteform()">Delete Ad</button></div>
+        <br>
+        <div class="col col-stats ml-3 ml-sm-0">
+                <button type="button" class=" btn btn-primary" style="margin-left: -17px !important" onClick="addeletecancelform()">Cancel</button>
+        </div>
+        
+        
+        
+    </form>
+                        </div>
+                     </div>
+                  </div>
+               </div> 
+            </div>
+         </div>
+      </div>
+   </div>
+        </div>
+        
+        <form action="<?php echo base_url()?>Adscheck/index" name="cancelForm" method="post">
+        </form>
+
+        </div>
+        <script type="text/javascript">
+            < script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" >
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#dtBasicExample').DataTable();
+                $('.dataTables_length').addClass('bs-select');
+            });
+
+            function addeleteform(){
+            	document.theForm.submit();
+            }
+
+            function addeletecancelform(){
+            	document.cancelForm.submit();
+            }
+            
+        </script>

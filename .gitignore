@@ -15,3 +15,14 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+
+.htaccess
+.htaccess.txt
+.project
+.settings
+uploads
+.buildpath
+robots.txt
+user_guide
+test.docx
+
